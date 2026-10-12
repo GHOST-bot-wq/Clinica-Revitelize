@@ -1,0 +1,515 @@
+/**
+ * REVITALIZE ROSTO E CORPO — COMPONENTES DE INTERFACE
+ */
+
+/* ==========================================================================
+   BOTÕES & AÇÕES
+   ========================================================================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  padding: 0.95rem 1.85rem;
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  border-radius: var(--radius-pill);
+  transition: all var(--transition-base);
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+  line-height: 1;
+  border: 1px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  transition: transform var(--transition-fast);
+}
+
+.btn:hover svg {
+  transform: translateX(2px);
+}
+
+/* Botão Primário (Marrom Profundo com texto marfim) */
+.btn--primary {
+  background-color: var(--color-marrom-deep);
+  color: var(--color-marfim);
+  border-color: var(--color-marrom-deep);
+  box-shadow: 0 4px 16px rgba(56, 42, 36, 0.15);
+}
+
+.btn--primary:hover {
+  background-color: var(--color-marrom);
+  border-color: var(--color-marrom);
+  color: var(--color-white);
+  box-shadow: 0 8px 24px rgba(56, 42, 36, 0.25);
+  transform: translateY(-2px);
+}
+
+/* Botão Secundário / Contorno Editorial */
+.btn--secondary {
+  background-color: transparent;
+  color: var(--color-marrom-deep);
+  border-color: var(--color-nude);
+}
+
+.btn--secondary:hover {
+  background-color: var(--color-areia-soft);
+  border-color: var(--color-marrom);
+  color: var(--color-marrom-deep);
+  transform: translateY(-2px);
+}
+
+/* Botão em fundo escuro */
+.btn--light {
+  background-color: var(--color-marfim);
+  color: var(--color-marrom-deep);
+  border-color: var(--color-marfim);
+}
+
+.btn--light:hover {
+  background-color: var(--color-white);
+  color: var(--color-marrom-darkest);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.btn--whatsapp {
+  background-color: #2E5B3D;
+  color: var(--color-white);
+  border-color: #2E5B3D;
+}
+
+.btn--whatsapp:hover {
+  background-color: #244830;
+  border-color: #244830;
+  color: var(--color-white);
+}
+
+/* ==========================================================================
+   BADGES & PILLS
+   ========================================================================== */
+
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-pill);
+  background-color: rgba(231, 216, 200, 0.55);
+  color: var(--color-marrom-deep);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid var(--color-border-delicate);
+}
+
+.badge-pill--dark {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: var(--color-marfim);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #558B6E;
+  display: inline-block;
+  box-shadow: 0 0 8px #558B6E;
+  animation: pulseDot 2s infinite ease-in-out;
+}
+
+@keyframes pulseDot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.3); opacity: 0.7; }
+}
+
+/* ==========================================================================
+   CARDS & MÓDULOS EDITORIAIS
+   ========================================================================== */
+
+.card-treatment {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.5rem, 1.25rem + 1vw, 2.25rem);
+  border: 1px solid var(--color-border-delicate);
+  transition: all var(--transition-base);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-treatment::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-areia), var(--color-nude));
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.card-treatment:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+  border-color: var(--color-nude);
+}
+
+.card-treatment:hover::before {
+  opacity: 1;
+}
+
+.card-treatment__tag {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-marrom-light);
+  margin-bottom: var(--space-xs);
+}
+
+.card-treatment__title {
+  font-size: var(--text-xl);
+  font-weight: 600;
+  margin-bottom: var(--space-xs);
+  color: var(--color-marrom-deep);
+}
+
+.card-treatment__desc {
+  font-size: var(--text-sm);
+  color: var(--color-marrom);
+  margin-bottom: var(--space-lg);
+  line-height: 1.6;
+}
+
+.card-treatment__features {
+  margin-bottom: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.card-treatment__feature-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--text-xs);
+  color: var(--color-marrom-deep);
+}
+
+.card-treatment__feature-item svg {
+  width: 14px;
+  height: 14px;
+  color: var(--color-wood-warm);
+  flex-shrink: 0;
+}
+
+.card-treatment__footer {
+  margin-top: auto;
+  padding-top: var(--space-md);
+  border-top: 1px solid rgba(231, 216, 200, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-treatment__link {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-marrom-deep);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.card-treatment__link:hover {
+  color: var(--color-wood-warm);
+}
+
+/* ==========================================================================
+   ACORDEÃO DO FAQ (ACESSIBILIDADE COMPLETA)
+   ========================================================================== */
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: var(--color-white);
+  border: 1px solid var(--color-border-delicate);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+  overflow: hidden;
+}
+
+.faq-item.active {
+  border-color: var(--color-nude);
+  box-shadow: var(--shadow-subtle);
+}
+
+.faq-trigger {
+  width: 100%;
+  text-align: left;
+  padding: 1.35rem 1.65rem;
+  font-family: var(--font-serif);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--color-marrom-deep);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.faq-trigger:hover {
+  color: var(--color-wood-warm);
+}
+
+.faq-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid var(--color-nude);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform var(--transition-base), background-color var(--transition-fast);
+}
+
+.faq-icon svg {
+  width: 12px;
+  height: 12px;
+  transition: transform var(--transition-base);
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(180deg);
+  background-color: var(--color-areia-soft);
+}
+
+.faq-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--transition-base);
+}
+
+.faq-content-inner {
+  padding: 0 1.65rem 1.35rem 1.65rem;
+  font-size: var(--text-sm);
+  color: var(--color-marrom);
+  line-height: 1.7;
+}
+
+/* ==========================================================================
+   BOTÃO FLUTUANTE DE WHATSAPP (COMPACTO & DISCRETO)
+   ========================================================================== */
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: var(--z-floating);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  transition: transform var(--transition-base);
+}
+
+.whatsapp-float__btn {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background-color: #2E5B3D;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(46, 91, 61, 0.35);
+  position: relative;
+  transition: transform var(--transition-fast), background-color var(--transition-fast);
+}
+
+.whatsapp-float__btn svg {
+  width: 30px;
+  height: 30px;
+}
+
+.whatsapp-float:hover .whatsapp-float__btn {
+  transform: scale(1.08);
+  background-color: #244830;
+}
+
+.whatsapp-float__label {
+  background: var(--color-white);
+  color: var(--color-marrom-deep);
+  padding: 8px 14px;
+  border-radius: var(--radius-pill);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--color-border-delicate);
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: all var(--transition-base);
+}
+
+.whatsapp-float:hover .whatsapp-float__label {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (max-width: 640px) {
+  .whatsapp-float {
+    bottom: 20px;
+    right: 20px;
+  }
+  .whatsapp-float__label {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   MODAL DE AGENDAMENTO EXCLUSIVO
+   ========================================================================== */
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(37, 27, 23, 0.65);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: var(--z-modal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-base);
+}
+
+.modal-backdrop.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-card {
+  background: var(--color-white);
+  border-radius: var(--radius-xl);
+  max-width: 540px;
+  width: 100%;
+  padding: clamp(1.75rem, 1.25rem + 1.5vw, 2.5rem);
+  box-shadow: var(--shadow-elevated);
+  position: relative;
+  transform: translateY(20px) scale(0.97);
+  transition: transform var(--transition-base);
+  border: 1px solid var(--color-border-delicate);
+}
+
+.modal-backdrop.is-open .modal-card {
+  transform: translateY(0) scale(1);
+}
+
+.modal-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--color-marfim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-marrom-deep);
+  cursor: pointer;
+  border: 1px solid var(--color-border-delicate);
+  transition: all var(--transition-fast);
+}
+
+.modal-close:hover {
+  background: var(--color-areia-soft);
+  transform: rotate(90deg);
+}
+
+.modal-header {
+  margin-bottom: 1.5rem;
+  padding-right: 2rem;
+}
+
+.modal-title {
+  font-size: var(--text-2xl);
+  font-weight: 600;
+  color: var(--color-marrom-deep);
+  margin-bottom: 0.25rem;
+}
+
+.modal-desc {
+  font-size: var(--text-sm);
+  color: var(--color-marrom);
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-label {
+  display: block;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-marrom-deep);
+  margin-bottom: 0.4rem;
+}
+
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-delicate);
+  background-color: var(--color-marfim-light);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  color: var(--color-marrom-deep);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  outline: none;
+  border-color: var(--color-marrom);
+  box-shadow: 0 0 0 3px rgba(112, 83, 68, 0.15);
+  background-color: var(--color-white);
+}

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 80" width="100%" height="100%" fill="none">
+  <!-- Organic wave accent symbolizing the clinic's wooden illuminated wall -->
+  <path d="M 12 58 C 35 48, 60 66, 85 54 C 105 44, 125 56, 145 48" stroke="#D0B8A3" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.8" />
+  
+  <!-- REVITALIZE typography -->
+  <text x="12" y="38" font-family="'Cormorant Garamond', 'Playfair Display', 'Didot', 'Cinzel', serif" font-size="34" font-weight="600" letter-spacing="0.14em" fill="#382A24">
+    REVITALIZE
+  </text>
+  
+  <!-- ROSTO E CORPO subtitle -->
+  <text x="14" y="58" font-family="'Plus Jakarta Sans', 'Montserrat', -apple-system, sans-serif" font-size="11" font-weight="500" letter-spacing="0.32em" fill="#705344">
+    ROSTO E CORPO
+  </text>
+  
+  <text x="212" y="58" font-family="'Plus Jakarta Sans', 'Montserrat', -apple-system, sans-serif" font-size="9" font-weight="400" letter-spacing="0.25em" fill="#A88B77">
+    • ESTÉTICA
+  </text>
+</svg>
